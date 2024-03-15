@@ -1,0 +1,97 @@
+/** Universal attributes **/
+
+body {
+	margin: 0;
+	padding: 0;
+    font-family: "Outfit", sans-serif;
+    background-color: rgb(213, 225, 239);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	font-size: 16px;
+	--dark-navy: #1F314F;
+	--gray: #7D889E;
+	--light-gray: #D5E1EF;
+	--component-shadow: #0000000c;
+}
+
+/** QR Component (article) **/
+
+.center {
+	height: 90vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media only screen and (orientation: landscape) and (width < 960px) { /*fits article in mobile landscape mode*/
+	.center {
+		margin: 25vh 0;
+	}
+}
+
+article {
+	background-color: #FFF;
+	border-radius: 20px;
+	box-shadow: 0px 25px 25px var(--component-shadow);
+	padding: max(1vw, 1rem);
+	width: max(35vh, 230px);
+}
+
+article img {
+    width: 100%;
+	border-radius: 20px;
+}
+
+article h1 {
+	color: var(--dark-navy);
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	margin:  max(0.75vw, 0.5rem);
+	font-size: max(2vh + 0.5rem, 1.25rem);
+}
+
+article p {
+	font-size: 15px;
+	color: var(--gray);
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	margin:  max(0.75vw, 0.5rem);
+	font-size: max(1.3vh + 0.5rem, 1rem);
+}
+
+/** Credit (footer) **/
+
+footer {
+	position: absolute;
+    bottom: 0;
+    left: 0; /*fix text align bug*/
+    right: 0; /*fix text align bug*/
+    text-align: center;
+    color: var(--dark-navy);
+	font-size: max(1vw + 0.5rem, 1.25rem);
+	margin: 1.5rem 2rem;
+}
+
+@media only screen and (orientation: landscape) and (width < 960px) { /*allows scroll for mobile landscape mode*/
+	footer {
+		position: relative;
+	}
+}
+
+footer a {
+	text-decoration: none;
+	color: #0066ff; /*overrides footer color*/
+	transition: all ease 0.3s;
+}
+
+footer a:hover {
+	color: #3687ff;
+}
